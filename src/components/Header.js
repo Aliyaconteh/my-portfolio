@@ -18,7 +18,7 @@ const Header = ({ darkMode, setDarkMode }) => {
       <div className="container">
         <nav className="navbar">
           <div className="logo">
-            <a href="#home">
+            <a className='edit' href="#home">
               <span className="logo-text">{'Aliya Conteh'}</span>
             </a>
           </div>
@@ -74,7 +74,10 @@ const Header = ({ darkMode, setDarkMode }) => {
           align-items: center;
           height: var(--header-height);
         }
-        
+          
+        .edit {
+          text-decoration: none;
+        }
         .logo-text {
           font-size: 1.5rem;
           font-weight: 700;

@@ -51,7 +51,7 @@ const Contact = () => {
   const contactInfo = [
     { title: "Email", value: "contehaliya8@gmail.com", link: "mailto:contehaliya8@gmail.com" },
     { title: "Phone", value: "+23277474645", link: "tel:+23277474645" },
-    { title: "Location", value: "Makeni Freetown, Sierra Leone", link: null },
+    { title: "Location", value: "Sierra Leone", link: null },
     { title: "Freelance", value: "Available", link: null }
   ];
 

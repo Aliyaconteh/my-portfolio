@@ -13,14 +13,14 @@ const Projects = () => {
       id: 1,
       title: "Donation Platform",
       description: "Platform to browse campaigns, donate, track social impact, generate receipts, and manage campaigns via admin dashboard.",
-       image: donationImg,
+      image: donationImg,
       tags: ["React", "Node.js", "MySQL", "Bootstrap"],
       github: "https://github.com/aliyaconteh",
       demo: "https://github.com/aliyaconteh",
       category: "fullstack"
     },
     {
-       id: 2,
+      id: 2,
       title: "Shop Management System",
       description: "Manage products, sales, and inventory with React frontend and Django REST Framework backend. Features search, filter, and admin authentication with JWT.",
       image: shopImg,
@@ -31,7 +31,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "SmartCare – Healthcare Management System",
+      title: "SmartCare - Healthcare Management System",
       description: "A web-based system for managing patients with role-based access for Admin and Staff. Includes patient registration, edit/view/delete features, and dashboards.",
       image: smartcareImg,
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
@@ -39,14 +39,22 @@ const Projects = () => {
       demo: "https://github.com/aliyaconteh", 
       category: "fullstack"
     },
+    {
+      id: 4,
+      title: "Ecommerce",
+      description: "A full-featured web-based Ecommerce platform with role-based access for Admin and Customers. Includes product listing, shopping cart, order management, payment integration, and interactive dashboards for analytics.",
+      image: smartcareImg,
+      tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
+      github: "https://github.com",
+      demo: "https://github.com/aliyaconteh", 
+      category: "fullstack"
+    }
     
    
   ];
   
   const filters = [
     { key: 'all', label: 'All Projects' },
-    { key: 'frontend', label: 'Frontend' },
-    { key: 'backend', label: 'Backend' },
     { key: 'fullstack', label: 'Full Stack' }
   ];
   
@@ -197,7 +205,6 @@ const Projects = () => {
         .project-links {
           display: flex;
           gap: 20px;
-        
         }
         
         .project-links a {
@@ -206,8 +213,8 @@ const Projects = () => {
           justify-content: center;
           width: 50px;
           height: 50px;
-          background-color: blue;
-          color: var(--dark-color);
+          background-color: var(--light-color);
+          color: var(--primary-color);
           border-radius: 50%;
           font-size: 1.3rem;
           transition: var(--transition);

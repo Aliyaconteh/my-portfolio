@@ -8,14 +8,13 @@ const About = () => {
         
         <div className="about-text">
           <p>
-            I'm a passionate JavaScript developer building modern web applications.
-            My journey started with vanilla JavaScript and evolved into specializing in React and the
-            broader JavaScript ecosystem.
+            I'm a JavaScript developer focused on building responsive, user-friendly web
+            applications. My journey started with vanilla JavaScript and evolved into specializing
+            in React and the broader JavaScript ecosystem.
           </p>
           <p>
-            I believe in writing clean, maintainable code and building products that not only 
-            work smoothly but also feel great to use. I’m always exploring new technologies and 
-            improving my skill set to stay updated in the fast-moving tech world.
+            I care about clean, maintainable code and interfaces that feel fast and intuitive.
+            I'm always learning new tools and improving my workflow to deliver better results.
           </p>
         </div>
       </div>

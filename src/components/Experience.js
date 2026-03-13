@@ -6,17 +6,23 @@ const Experience = () => {
     {
       degree: "Bachelor of Science in Computer Science",
       institution: "University of Makeni Unimak",
-      period: "2022 - 2026",
+      period: "2022 - Present (Expected 2027)",
       description: "Specialized in software engineering and web technologies."
+    },
+    {
+      degree: "Full-Stack Development Internship",
+      institution: "CodeAlpha",
+      period: "2026",
+      description: "Certificate of accomplishment in full-stack development focused on JavaScript, Node.js, HTML, and CSS."
     },
     {
       degree: "Frontend Development Libraries",
       institution: "FreeCodeCamp",
       period: "2025",
-      description: "Certification in advanced JavaScript concepts and algorithms."
+      description: "Certification in frontend libraries and modern JavaScript."
     },
     {
-      degree: "Data analysis essentials",
+      degree: "Data Analysis Essentials",
       institution: "Cisco Networking Academy",
       period: "2024",
       description: "Completed a comprehensive course on data analysis fundamentals, including data collection, cleaning, visualization, and interpretation using real-world datasets. Gained practical skills in analyzing and drawing insights from data to support informed decision-making."

@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-text" style={{ textAlign: 'center' }}>
             <h1 className="hero-title">
-              Hi, I'm <span className="highlight">Aliya Conteh•</span>
+              Hi, I'm <span className="highlight">Aliya Conteh</span>
             </h1>
             <h2 className="hero-subtitle">
               Full Stack JavaScript Developer

@@ -3,7 +3,7 @@ import {
   FaJs, FaReact, FaNodeJs, FaGitAlt, FaDatabase, 
   FaHtml5, FaCss3Alt, FaNpm 
 } from 'react-icons/fa';
-import { SiNextdotjs, SiExpress, SiMysql } from 'react-icons/si';
+import { SiNextdotjs, SiExpress, SiMysql, SiBootstrap, SiDjango } from 'react-icons/si';
 
 const Skills = () => {
   const skillCategories = [
@@ -15,7 +15,7 @@ const Skills = () => {
         { name: "HTML5", icon: <FaHtml5 /> },
         { name: "CSS3", icon: <FaCss3Alt /> },
         { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "Bootstrap", icon: <FaCss3Alt /> }
+        { name: "Bootstrap", icon: <SiBootstrap /> }
       ]
     },
     {
@@ -25,7 +25,7 @@ const Skills = () => {
         { name: "Express", icon: <SiExpress /> },
         { name: "MySQL", icon: <SiMysql /> },
         { name: "REST APIs", icon: <FaDatabase /> },
-         { name: "Django", icon: <FaReact /> }
+        { name: "Django", icon: <SiDjango /> }
       ]
     },
     {

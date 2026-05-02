@@ -3,6 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import donationImg from '../assets/images/donation-platform.png';
 import shopImg from '../assets/images/shop-system.png';
 import smartcareImg from '../assets/images/smartcare.png';
+import ecommerceImg from '../assets/images/ecommerce.png';
 
 
 const Projects = () => {

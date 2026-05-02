@@ -10,29 +10,29 @@ const Skills = () => {
     {
       category: "Frontend",
       skills: [
-        { name: "JavaScript", icon: <FaJs /> },
-        { name: "React", icon: <FaReact /> },
-        { name: "HTML5", icon: <FaHtml5 /> },
-        { name: "CSS3", icon: <FaCss3Alt /> },
-        { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "Bootstrap", icon: <SiBootstrap /> }
+        { name: "JavaScript", icon: <FaJs />, level: 85 },
+        { name: "React", icon: <FaReact />, level: 80 },
+        { name: "HTML5", icon: <FaHtml5 />, level: 90 },
+        { name: "CSS3", icon: <FaCss3Alt />, level: 85 },
+        { name: "Next.js", icon: <SiNextdotjs />, level: 65 },
+        { name: "Bootstrap", icon: <SiBootstrap />, level: 80 }
       ]
     },
     {
       category: "Backend",
       skills: [
-        { name: "Node.js", icon: <FaNodeJs /> },
-        { name: "Express", icon: <SiExpress /> },
-        { name: "MySQL", icon: <SiMysql /> },
-        { name: "REST APIs", icon: <FaDatabase /> },
-        { name: "Django", icon: <SiDjango /> }
+        { name: "Node.js", icon: <FaNodeJs />, level: 75 },
+        { name: "Express", icon: <SiExpress />, level: 75 },
+        { name: "MySQL", icon: <SiMysql />, level: 70 },
+        { name: "REST APIs", icon: <FaDatabase />, level: 75 },
+        { name: "Django", icon: <SiDjango />, level: 60 }
       ]
     },
     {
-      category: "Tools & Others",
+      category: "Tools & Other Skills",
       skills: [
-        { name: "Git", icon: <FaGitAlt /> },
-        { name: "npm", icon: <FaNpm /> }
+        { name: "Git", icon: <FaGitAlt />, level: 75 },
+        { name: "npm", icon: <FaNpm />, level: 75 }
        
       ]
     }
@@ -54,6 +54,10 @@ const Skills = () => {
                       {skill.icon}
                     </div>
                     <span className="skill-name">{skill.name}</span>
+                    <div className="skill-level" aria-label={`${skill.name} proficiency ${skill.level}%`}>
+                      <div className="skill-level-fill" style={{ width: `${skill.level}%` }}></div>
+                    </div>
+                    <span className="skill-percent">{skill.level}%</span>
                   </div>
                 ))}
               </div>
@@ -122,6 +126,28 @@ const Skills = () => {
           font-weight: 600;
           text-align: center;
           font-size: 0.95rem;
+        }
+
+        .skill-level {
+          width: 100%;
+          height: 8px;
+          margin-top: 12px;
+          overflow: hidden;
+          border-radius: 999px;
+          background-color: rgba(58, 134, 255, 0.15);
+        }
+
+        .skill-level-fill {
+          height: 100%;
+          border-radius: inherit;
+          background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .skill-percent {
+          margin-top: 6px;
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--primary-color);
         }
         
         @media (max-width: 992px) {

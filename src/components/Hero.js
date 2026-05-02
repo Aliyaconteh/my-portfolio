@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaDownload } from 'react-icons/fa';
 import MyPhoto from '../assets/images/my-photo.jpg';
 
 const Hero = () => {
@@ -11,7 +12,7 @@ const Hero = () => {
               Hi, I'm <span className="highlight">Aliya Conteh</span>
             </h1>
             <h2 className="hero-subtitle">
-              Full Stack JavaScript Developer
+              Full-Stack JavaScript Developer
             </h2>
            
 
@@ -25,7 +26,10 @@ const Hero = () => {
 
             <div className="hero-buttons">
               <a href="#projects" className="btn">View My Work</a>
-              <a href="#contact" className="btn btn-outline">Get In Touch</a>
+              <a href="/My-Resume.pdf" className="btn btn-outline" download>
+                Download Resume <FaDownload className="btn-icon" />
+              </a>
+              <a href="#contact" className="btn btn-outline">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -83,6 +87,14 @@ const Hero = () => {
           gap: 20px;
           justify-content: center;
           margin-top: 20px;
+          flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
         }
 
         @media (max-width: 768px) {

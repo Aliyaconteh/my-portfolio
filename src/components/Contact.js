@@ -44,7 +44,7 @@ const Contact = () => {
     .catch((error) => {
       console.error("Email send failed:", error);
       setIsSubmitting(false);
-      alert("Something went wrong. Try again.");
+      alert("Something went wrong. Please try again.");
     });
   };
 
@@ -58,7 +58,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">Get in Touch</h2>
 
         <div className="contact-content">
           <div className="contact-info">

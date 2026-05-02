@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import donationImg from '../assets/images/donation-platform.png';
-import shopImg from '../assets/images/shop-system.png';
+import { FaCube, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import smartcareImg from '../assets/images/smartcare.png';
 import ecommerceImg from '../assets/images/ecommerce.png';
-
+import WebGLImg from '../assets/webGL.png';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -12,28 +10,22 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Donation Platform",
-      description: "Platform to browse campaigns, donate, track social impact, generate receipts, and manage campaigns via admin dashboard.",
-      image: donationImg,
-      tags: ["React", "Node.js", "MySQL", "Bootstrap"],
-      github: "https://github.com/aliyaconteh",
+      title: "WebGL Geometry & Graphics Learning Tool",
+      description: "An interactive educational tool for teaching 3D geometry and computer graphics concepts using WebGL. It visualizes a colored cube, coordinate axes, transformations, camera views, projections, lighting, and the final MVP matrix in real time.",
+      challenge: "Challenge: Making abstract 3D graphics concepts easier to understand for learners.",
+      solution: "Solution: Built real-time visual feedback for transformations, camera views, projections, and lighting so users can connect code changes with visual results.",
+      image: WebGLImg,
+      tags: ["HTML", "CSS", "JavaScript", "WebGL", "3D Geometry"],
+      github: "https://github.com/Aliyaconteh/3D-Geometry-Transformations",
       demo: "https://github.com/aliyaconteh",
-      category: "fullstack"
-    },
-    {
-      id: 2,
-      title: "Shop Management System",
-      description: "Manage products, sales, and inventory with React frontend and Django REST Framework backend. Features search, filter, and admin authentication with JWT.",
-      image: shopImg,
-      tags: ["React", "Bootstrap", "Django", "MySQL", "JWT"],
-      github: "https://github.com",
-      demo: "https://smartstuck.netlify.app",
-      category: "fullstack"
+      category: "frontend"
     },
     {
       id: 3,
       title: "SmartCare - Healthcare Management System",
-      description: "A web-based system for managing patients with role-based access for Admin and Staff. Includes patient registration, edit/view/delete features, and dashboards.",
+      description: "A web-based system for managing patients with role-based access for administrators and staff. It includes patient registration, edit, view, and delete features, along with dashboards.",
+      challenge: "Challenge: Organizing sensitive patient records while keeping workflows clear for different staff roles.",
+      solution: "Solution: Implemented role-based access, structured patient management features, and dashboard views to make daily healthcare tasks easier to track.",
       image: smartcareImg,
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
       github: "https://github.com",
@@ -42,8 +34,10 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Ecommerce",
-      description: "A full-featured web-based Ecommerce platform with role-based access for Admin and Customers. Includes product listing, shopping cart, order management, payment integration, and interactive dashboards for analytics.",
+      title: "E-commerce Platform",
+      description: "A full-featured web-based e-commerce platform with role-based access for administrators and customers. It includes product listings, a shopping cart, order management, payment integration, and interactive analytics dashboards.",
+      challenge: "Challenge: Connecting product browsing, cart management, payments, and admin order tracking in one smooth flow.",
+      solution: "Solution: Designed a role-based platform with customer shopping features, admin management tools, and analytics dashboards for better business visibility.",
       image: ecommerceImg,
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
       github: "https://github.com",
@@ -56,7 +50,8 @@ const Projects = () => {
   
   const filters = [
     { key: 'all', label: 'All Projects' },
-    { key: 'fullstack', label: 'Full Stack' }
+    { key: 'frontend', label: 'Frontend' },
+    { key: 'fullstack', label: 'Full-Stack' }
   ];
   
   const filteredProjects = filter === 'all' 
@@ -66,7 +61,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="container">
-        <h2 className="section-title">Some of my Projects</h2>
+        <h2 className="section-title">Featured Projects</h2>
         
         <div className="project-filters">
           {filters.map((filterItem) => (
@@ -84,7 +79,13 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                {project.image ? (
+                  <img src={project.image} alt={project.title} />
+                ) : (
+                  <div className="project-placeholder" aria-label={project.title}>
+                    <FaCube />
+                  </div>
+                )}
                 <div className="project-overlay">
                   <div className="project-links">
                     <a 
@@ -110,6 +111,11 @@ const Projects = () => {
               <div className="project-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
+
+                <div className="project-details">
+                  <p>{project.challenge}</p>
+                  <p>{project.solution}</p>
+                </div>
                 
                 <div className="project-tags">
                   {project.tags.map((tag) => (
@@ -180,8 +186,24 @@ const Projects = () => {
           object-fit: cover;
           transition: var(--transition);
         }
+
+        .project-placeholder {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+          color: white;
+          font-size: 4rem;
+          transition: var(--transition);
+        }
         
         .project-card:hover .project-image img {
+          transform: scale(1.05);
+        }
+
+        .project-card:hover .project-placeholder {
           transform: scale(1.05);
         }
         
@@ -239,6 +261,19 @@ const Projects = () => {
         .project-content p {
           margin-bottom: 20px;
           color: var(--gray-color);
+        }
+
+        .project-details {
+          display: grid;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+
+        .project-details p {
+          margin-bottom: 0;
+          padding-left: 12px;
+          border-left: 3px solid var(--primary-color);
+          font-size: 0.95rem;
         }
         
         .project-tags {

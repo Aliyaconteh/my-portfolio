@@ -53,26 +53,53 @@ const Skills = () => {
         .skills-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 40px;
+          gap: 34px;
         }
         
         .skill-category {
-          background-color: var(--light-gray);
-          padding: 30px;
-          border-radius: var(--border-radius);
-          transition: var(--transition);
+          position: relative;
+          overflow: hidden;
+          background:
+            linear-gradient(var(--light-gray), var(--light-gray)) padding-box,
+            linear-gradient(135deg, rgba(58, 134, 255, 0.58), rgba(131, 56, 236, 0.4)) border-box;
+          padding: 34px;
+          border: 1px solid transparent;
+          border-radius: 24px;
+          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+          transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .skill-category::before {
+          content: '';
+          position: absolute;
+          width: 180px;
+          height: 180px;
+          top: -90px;
+          right: -70px;
+          background: radial-gradient(circle, rgba(58, 134, 255, 0.22), transparent 70%);
+          pointer-events: none;
+        }
+
+        .skill-category::after {
+          content: '';
+          position: absolute;
+          inset: auto 28px 0 28px;
+          height: 1px;
+          background: linear-gradient(to right, transparent, rgba(58, 134, 255, 0.55), transparent);
         }
         
         .skill-category:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--box-shadow);
+          transform: translateY(-9px);
+          box-shadow: 0 26px 60px rgba(58, 134, 255, 0.18);
         }
         
         .category-title {
           font-size: 1.8rem;
-          margin-bottom: 25px;
+          margin-bottom: 28px;
           color: var(--primary-color);
           text-align: center;
+          position: relative;
+          z-index: 1;
         }
         
         .skills-container {
@@ -85,30 +112,53 @@ const Skills = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 20px 10px;
-          background-color: var(--light-color);
-          border-radius: var(--border-radius);
-          transition: var(--transition);
+          justify-content: center;
+          min-height: 138px;
+          padding: 24px 14px;
+          background:
+            linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.58));
+          border: 1px solid rgba(58, 134, 255, 0.14);
+          border-radius: 20px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          position: relative;
+          z-index: 1;
+        }
+
+        .dark-mode .skill-item {
+          background: linear-gradient(145deg, rgba(18, 18, 18, 0.74), rgba(52, 58, 64, 0.86));
+          border-color: rgba(58, 134, 255, 0.2);
         }
         
         .skill-item:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          transform: translateY(-6px) scale(1.02);
+          border-color: rgba(58, 134, 255, 0.35);
+          box-shadow: 0 18px 35px rgba(58, 134, 255, 0.16);
         }
         
         .skill-icon-wrapper {
-          font-size: 2.5rem;
+          width: 68px;
+          height: 68px;
+          font-size: 2.35rem;
           color: var(--primary-color);
-          margin-bottom: 10px;
+          margin-bottom: 14px;
           display: flex;
           align-items: center;
           justify-content: center;
+          border-radius: 22px;
+          background: linear-gradient(135deg, rgba(58, 134, 255, 0.16), rgba(131, 56, 236, 0.12));
+          box-shadow: inset 0 0 0 1px rgba(58, 134, 255, 0.12);
+          transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon-wrapper {
+          transform: rotate(-4deg) scale(1.06);
         }
         
         .skill-name {
           font-weight: 600;
           text-align: center;
-          font-size: 0.95rem;
+          font-size: 1rem;
+          letter-spacing: 0.01em;
         }
         
         @media (max-width: 992px) {

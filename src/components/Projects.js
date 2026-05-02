@@ -113,8 +113,8 @@ const Projects = () => {
                 <p>{project.description}</p>
 
                 <div className="project-details">
-                  <p>{project.challenge}</p>
-                  <p>{project.solution}</p>
+                  <p className="detail-card challenge-note">{project.challenge}</p>
+                  <p className="detail-card solution-note">{project.solution}</p>
                 </div>
                 
                 <div className="project-tags">
@@ -138,13 +138,14 @@ const Projects = () => {
         }
         
         .filter-btn {
-          padding: 8px 20px;
-          background-color: var(--light-gray);
-          border: none;
+          padding: 10px 22px;
+          background: linear-gradient(145deg, var(--light-gray), var(--light-color));
+          border: 1px solid rgba(58, 134, 255, 0.16);
           border-radius: 30px;
           font-weight: 600;
           cursor: pointer;
           transition: var(--transition);
+          color: var(--dark-color);
         }
         
         .filter-btn.active {
@@ -154,29 +155,52 @@ const Projects = () => {
         
         .filter-btn:hover:not(.active) {
           background-color: rgba(58, 134, 255, 0.1);
+          border-color: rgba(58, 134, 255, 0.35);
+          transform: translateY(-2px);
         }
         
         .projects-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 30px;
+          gap: 34px;
         }
         
         .project-card {
-          background-color: var(--light-gray);
-          border-radius: var(--border-radius);
+          position: relative;
+          background:
+            linear-gradient(var(--light-gray), var(--light-gray)) padding-box,
+            linear-gradient(135deg, rgba(58, 134, 255, 0.65), rgba(131, 56, 236, 0.45), rgba(255, 0, 110, 0.35)) border-box;
+          border: 1px solid transparent;
+          border-radius: 22px;
           overflow: hidden;
-          transition: var(--transition);
+          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .project-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background:
+            radial-gradient(circle at 15% 10%, rgba(58, 134, 255, 0.16), transparent 32%),
+            radial-gradient(circle at 85% 0%, rgba(255, 0, 110, 0.12), transparent 28%);
+          opacity: 0;
+          transition: opacity 0.35s ease;
         }
         
         .project-card:hover {
-          transform: translateY(-10px);
-          box-shadow: var(--box-shadow);
+          transform: translateY(-12px);
+          box-shadow: 0 26px 60px rgba(58, 134, 255, 0.2);
+        }
+
+        .project-card:hover::before {
+          opacity: 1;
         }
         
         .project-image {
           position: relative;
-          height: 200px;
+          height: 220px;
           overflow: hidden;
         }
         
@@ -184,7 +208,7 @@ const Projects = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: var(--transition);
+          transition: transform 0.5s ease, filter 0.5s ease;
         }
 
         .project-placeholder {
@@ -200,7 +224,8 @@ const Projects = () => {
         }
         
         .project-card:hover .project-image img {
-          transform: scale(1.05);
+          transform: scale(1.08);
+          filter: saturate(1.12) contrast(1.04);
         }
 
         .project-card:hover .project-placeholder {
@@ -213,7 +238,9 @@ const Projects = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.7);
+          background:
+            linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(18, 18, 18, 0.82)),
+            radial-gradient(circle at center, rgba(58, 134, 255, 0.32), transparent 58%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -236,11 +263,12 @@ const Projects = () => {
           justify-content: center;
           width: 50px;
           height: 50px;
-          background-color: var(--light-color);
+          background-color: rgba(248, 249, 250, 0.94);
           color: var(--primary-color);
           border-radius: 50%;
           font-size: 1.3rem;
-          transition: var(--transition);
+          transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+          box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
         }
         
         .project-links a:hover {
@@ -250,30 +278,52 @@ const Projects = () => {
         }
         
         .project-content {
-          padding: 25px;
+          position: relative;
+          padding: 28px;
+          z-index: 1;
         }
         
         .project-content h3 {
           font-size: 1.5rem;
-          margin-bottom: 10px;
+          margin-bottom: 12px;
+          line-height: 1.25;
         }
         
         .project-content p {
-          margin-bottom: 20px;
+          margin-bottom: 22px;
           color: var(--gray-color);
         }
 
         .project-details {
           display: grid;
-          gap: 10px;
-          margin-bottom: 20px;
+          gap: 12px;
+          margin-bottom: 22px;
         }
 
-        .project-details p {
+        .detail-card {
+          position: relative;
           margin-bottom: 0;
-          padding-left: 12px;
-          border-left: 3px solid var(--primary-color);
+          padding: 13px 14px 13px 16px;
+          border: 1px solid rgba(58, 134, 255, 0.14);
+          border-left: 4px solid var(--primary-color);
+          border-radius: 14px;
+          background: rgba(58, 134, 255, 0.07);
           font-size: 0.95rem;
+          line-height: 1.55;
+        }
+
+        .dark-mode .detail-card {
+          background: rgba(58, 134, 255, 0.1);
+          border-color: rgba(58, 134, 255, 0.22);
+        }
+
+        .solution-note {
+          border-left-color: var(--secondary-color);
+          background: rgba(131, 56, 236, 0.08);
+        }
+
+        .dark-mode .solution-note {
+          background: rgba(131, 56, 236, 0.12);
         }
         
         .project-tags {
@@ -283,12 +333,13 @@ const Projects = () => {
         }
         
         .tag {
-          padding: 5px 12px;
-          background-color: rgba(58, 134, 255, 0.1);
+          padding: 6px 13px;
+          background: rgba(58, 134, 255, 0.12);
           color: var(--primary-color);
           border-radius: 20px;
           font-size: 0.8rem;
           font-weight: 600;
+          border: 1px solid rgba(58, 134, 255, 0.16);
         }
         
         @media (max-width: 768px) {

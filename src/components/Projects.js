@@ -43,7 +43,7 @@ const Projects = () => {
       id: 4,
       title: "Ecommerce",
       description: "A full-featured web-based Ecommerce platform with role-based access for Admin and Customers. Includes product listing, shopping cart, order management, payment integration, and interactive dashboards for analytics.",
-      image: smartcareImg,
+      image: ecommerceImg,
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
       github: "https://github.com",
       demo: "https://github.com/aliyaconteh", 

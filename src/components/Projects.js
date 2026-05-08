@@ -3,6 +3,7 @@ import { FaCube, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import smartcareImg from '../assets/images/smartcare.png';
 import ecommerceImg from '../assets/images/ecommerce.png';
 import WebGLImg from '../assets/webGL.png';
+import kuusorImg from '../assets/images/kuusor.png';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -12,8 +13,6 @@ const Projects = () => {
       id: 1,
       title: "WebGL Geometry & Graphics Learning Tool",
       description: "An interactive educational tool for teaching 3D geometry and computer graphics concepts using WebGL. It visualizes a colored cube, coordinate axes, transformations, camera views, projections, lighting, and the final MVP matrix in real time.",
-      challenge: "Challenge: Making abstract 3D graphics concepts easier to understand for learners.",
-      solution: "Solution: Built real-time visual feedback for transformations, camera views, projections, and lighting so users can connect code changes with visual results.",
       image: WebGLImg,
       tags: ["HTML", "CSS", "JavaScript", "WebGL", "3D Geometry"],
       github: "https://github.com/Aliyaconteh/3D-Geometry-Transformations",
@@ -24,8 +23,6 @@ const Projects = () => {
       id: 3,
       title: "SmartCare - Healthcare Management System",
       description: "A web-based system for managing patients with role-based access for administrators and staff. It includes patient registration, edit, view, and delete features, along with dashboards.",
-      challenge: "Challenge: Organizing sensitive patient records while keeping workflows clear for different staff roles.",
-      solution: "Solution: Implemented role-based access, structured patient management features, and dashboard views to make daily healthcare tasks easier to track.",
       image: smartcareImg,
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
       github: "https://github.com",
@@ -36,12 +33,21 @@ const Projects = () => {
       id: 4,
       title: "E-commerce Platform",
       description: "A full-featured web-based e-commerce platform with role-based access for administrators and customers. It includes product listings, a shopping cart, order management, payment integration, and interactive analytics dashboards.",
-      challenge: "Challenge: Connecting product browsing, cart management, payments, and admin order tracking in one smooth flow.",
-      solution: "Solution: Designed a role-based platform with customer shopping features, admin management tools, and analytics dashboards for better business visibility.",
       image: ecommerceImg,
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
       github: "https://github.com",
       demo: "https://github.com/aliyaconteh", 
+      category: "fullstack"
+    },
+    {
+      id: 5,
+      title: "Kuusor - Internship Platform",
+      description: "An internship platform where companies can post internship opportunities and students can discover openings, apply, and connect with employers.",
+      image: kuusorImg,
+      imageType: "logo",
+      tags: ["React", "JavaScript", "Node.JS","prisma","Internship Platform", "Web App"],
+      github: "https://github.com/aliyaconteh",
+      demo: "https://kuusor.com",
       category: "fullstack"
     }
     
@@ -78,7 +84,7 @@ const Projects = () => {
         <div className="projects-grid">
           {filteredProjects.map((project) => (
             <div key={project.id} className="project-card">
-              <div className="project-image">
+              <div className={`project-image ${project.imageType === 'logo' ? 'project-logo-image' : ''}`}>
                 {project.image ? (
                   <img src={project.image} alt={project.title} />
                 ) : (
@@ -112,10 +118,7 @@ const Projects = () => {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
 
-                <div className="project-details">
-                  <p className="detail-card challenge-note">{project.challenge}</p>
-                  <p className="detail-card solution-note">{project.solution}</p>
-                </div>
+               
                 
                 <div className="project-tags">
                   {project.tags.map((tag) => (
@@ -211,6 +214,18 @@ const Projects = () => {
           transition: transform 0.5s ease, filter 0.5s ease;
         }
 
+        .project-logo-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 26px;
+          background: linear-gradient(135deg, rgba(248, 249, 250, 0.96), rgba(235, 242, 255, 0.96));
+        }
+
+        .project-logo-image img {
+          object-fit: contain;
+        }
+
         .project-placeholder {
           width: 100%;
           height: 100%;
@@ -226,6 +241,10 @@ const Projects = () => {
         .project-card:hover .project-image img {
           transform: scale(1.08);
           filter: saturate(1.12) contrast(1.04);
+        }
+
+        .project-card:hover .project-logo-image img {
+          transform: scale(1.03);
         }
 
         .project-card:hover .project-placeholder {

@@ -8,7 +8,7 @@ const About = () => {
         
         <div className="about-text">
           <p>
-            I'm a JavaScript developer focused on building responsive, user-friendly web
+            I'm a Software developer focused on building responsive, user-friendly web
             applications. My journey started with vanilla JavaScript and evolved into specializing
             in React and the broader JavaScript ecosystem.
           </p>

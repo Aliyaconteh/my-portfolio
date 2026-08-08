@@ -12,7 +12,7 @@ const Hero = () => {
               Hi, I'm <span className="highlight">Aliya Conteh</span>
             </h1>
             <h2 className="hero-subtitle">
-              Full-Stack JavaScript Developer
+              Full-Stack Software Developer
             </h2>
            
 

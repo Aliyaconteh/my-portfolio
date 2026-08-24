@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   FaJs, FaReact, FaNodeJs
 } from 'react-icons/fa';
-import { SiNextdotjs, SiExpress, SiMysql, SiSupabase } from 'react-icons/si';
+import { SiNextdotjs, SiExpress, SiMysql, SiPostgresql, SiTypescript, SiVite } from 'react-icons/si';
 
 const Skills = () => {
   const skillCategories = [
@@ -10,8 +10,10 @@ const Skills = () => {
       category: "Frontend",
       skills: [
         { name: "JavaScript", icon: <FaJs /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
         { name: "React", icon: <FaReact /> },
-        { name: "Next.js", icon: <SiNextdotjs /> }
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "Vite", icon: <SiVite /> }
       ]
     },
     {
@@ -20,7 +22,8 @@ const Skills = () => {
         { name: "Node.js", icon: <FaNodeJs /> },
         { name: "Express", icon: <SiExpress /> },
         { name: "MySQL", icon: <SiMysql /> },
-        { name: "Supabase", icon: <SiSupabase /> }
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        
       ]
     }
   ];

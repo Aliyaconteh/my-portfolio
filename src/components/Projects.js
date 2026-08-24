@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaCube, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import smartcareImg from '../assets/images/smartcare.png';
+import kuizroomImg from '../assets/images/kuizroom.png';
 import ecommerceImg from '../assets/images/ecommerce.png';
 import WebGLImg from '../assets/webGL.png';
 import kuusorImg from '../assets/images/kuusor.png';
@@ -21,12 +21,13 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "SmartCare - Healthcare Management System",
-      description: "A web-based system for managing patients with role-based access for administrators and staff. It includes patient registration, edit, view, and delete features, along with dashboards.",
-      image: smartcareImg,
-      tags: ["HTML", "CSS", "JS", "Bootstrap", "Node.js", "MySQL"],
-      github: "https://github.com",
-      demo: "https://github.com/aliyaconteh", 
+      title: "KuizRoom - A Real-Time Multiplayer Quiz Application",
+      description: "KuizRoom is a real-time multiplayer quiz platform designed to provide an interactive, competitive, and engaging quiz exprience. Players can quiz rooms, answer questions in real time, and receive instant feedback on their perormance   ",
+      image: kuizroomImg,
+      tags: ["React.js", "Vite.js", "Node.js", "Express.js", "Socket.IO", "PostgresSQL/Supabase", "JavaScript"],
+      
+      github: "https://github.com/aliyaconteh",
+      demo: "https://kuizroom.netlify.app", 
       category: "fullstack"
     },
     {

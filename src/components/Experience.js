@@ -27,6 +27,12 @@ const Experience = () => {
       period: "2024",
       description: "Completed a comprehensive course on data analysis fundamentals, including data collection, cleaning, visualization, and interpretation using real-world datasets. Gained practical skills in analyzing data and drawing insights to support informed decision-making."
     },
+    {
+      degree: "Introduction to Cybersecurity",
+      institution: "freeCodeCamp",
+      period: "2026",
+      description: "Completed a course on cybersecurity fundamentals, including network security, cryptography, and risk management."
+    }
   ];
   
   return (

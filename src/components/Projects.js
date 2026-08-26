@@ -9,18 +9,8 @@ const Projects = () => {
   const [filter, setFilter] = useState('all');
   
   const projects = [
-    {
+     {
       id: 1,
-      title: "WebGL Geometry & Graphics Learning Tool",
-      description: "An interactive educational tool for teaching 3D geometry and computer graphics concepts using WebGL. It visualizes a colored cube, coordinate axes, transformations, camera views, projections, lighting, and the final MVP matrix in real time.",
-      image: WebGLImg,
-      tags: ["HTML", "CSS", "JavaScript", "WebGL", "3D Geometry"],
-      github: "https://github.com/Aliyaconteh/3D-Geometry-Transformations",
-      demo: "https://github.com/aliyaconteh",
-      category: "frontend"
-    },
-    {
-      id: 3,
       title: "KuizRoom - A Real-Time Multiplayer Quiz Application",
       description: "KuizRoom is a real-time multiplayer quiz platform designed to provide an interactive, competitive, and engaging quiz exprience. Players can quiz rooms, answer questions in real time, and receive instant feedback on their perormance   ",
       image: kuizroomImg,
@@ -31,7 +21,18 @@ const Projects = () => {
       category: "fullstack"
     },
     {
-      id: 4,
+      id: 2,
+      title: "WebGL Geometry & Graphics Learning Tool",
+      description: "An interactive educational tool for teaching 3D geometry and computer graphics concepts using WebGL. It visualizes a colored cube, coordinate axes, transformations, camera views, projections, lighting, and the final MVP matrix in real time.",
+      image: WebGLImg,
+      tags: ["HTML", "CSS", "JavaScript", "WebGL", "3D Geometry"],
+      github: "https://github.com/Aliyaconteh/3D-Geometry-Transformations",
+      demo: "https://github.com/aliyaconteh",
+      category: "frontend"
+    },
+   
+    {
+      id: 3,
       title: "E-commerce Platform",
       description: "A full-featured web-based e-commerce platform with role-based access for administrators and customers. It includes product listings, a shopping cart, order management, payment integration, and interactive analytics dashboards.",
       image: ecommerceImg,
@@ -41,7 +42,7 @@ const Projects = () => {
       category: "fullstack"
     },
     {
-      id: 5,
+      id: 4,
       title: "Kuusor - Internship Platform",
       description: "An internship platform where companies can post internship opportunities and students can discover openings, apply, and connect with employers.",
       image: kuusorImg,
